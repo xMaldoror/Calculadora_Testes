@@ -8,28 +8,51 @@ class TestCalculadora(unittest.TestCase):
     def teste_operacoes_basicas(self):
         # Teste operações básicas de cada operador + - * / % ^
         self.assertEqual(calculadora(2, 3, '+'), 5)
+        self.assertEqual(calculadora(5, 2, '-'), 3)
+        self.assertEqual(calculadora(2, 3, '*'), 6)
+        self.assertEqual(calculadora(6, 2, '/'), 3)
+        self.assertEqual(calculadora(7, 3, '%'), 1)
+        self.assertEqual(calculadora(2, 3, '^'), 8)
 
     def teste_v2_operacoes(self):
         # Teste operações básicas de cada operador + - * / % ^
         self.assertEqual(calculadora_v2(2, 3, '+'), 5)
+        self.assertEqual(calculadora_v2(5, 2, '-'), 3)
+        self.assertEqual(calculadora_v2(2, 3, '*'), 6)
+        self.assertEqual(calculadora_v2(6, 2, '/'), 3)
+        self.assertEqual(calculadora_v2(7, 3, '%'), 1)
+        self.assertEqual(calculadora_v2(2, 3, '^'), 8)
 
     def teste_v3_operacoes(self):
         # Teste operações básicas de cada operador + - * / % ^
         self.assertEqual(calculadora_v3(2, 3, '+'), 5)
+        self.assertEqual(calculadora_v3(5, 2, '-'), 3)
+        self.assertEqual(calculadora_v3(2, 3, '*'), 6)
+        self.assertEqual(calculadora_v3(6, 2, '/'), 3)
+        self.assertEqual(calculadora_v3(7, 3, '%'), 1)
+        self.assertEqual(calculadora_v3(2, 3, '^'), 8)
 
     def teste_v4_operacoes(self):
         # Teste operações básicas de cada operador + - * / % ^
         self.assertEqual(calculadora_v4(2, 3, '+'), 5)
+        self.assertEqual(calculadora_v4(5, 2, '-'), 3)
+        self.assertEqual(calculadora_v4(2, 3, '*'), 6)
+        self.assertEqual(calculadora_v4(6, 2, '/'), 3)
+        self.assertEqual(calculadora_v4(7, 3, '%'), 1)
+        self.assertEqual(calculadora_v4(2, 3, '^'), 8)
 
     def teste_operacoes_diversas(self):
         # Teste divisão por zero operador para todas versões / %
-        self.assertTrue(math.isnan(calculadora(5, 0, '/')))
-        self.assertTrue(math.isnan(calculadora(5, 0, '%')))
+        for calc in [calculadora, calculadora_v2, calculadora_v3, calculadora_v4]
+            self.assertTrue(math.isnan(calculadora(5, 0, '/')))
+            self.assertTrue(math.isnan(calculadora(5, 0, '%')))
 
+    def teste_operadores_inválidos(self)
         # Teste operador inválido - fazer três testes para todas as versões
-        self.assertTrue(math.isnan(calculadora(2, 3, '$')))
-        self.assertTrue(math.isnan(calculadora(2, 5, '#')))
-        self.assertTrue(math.isnan(calculadora(0, 2, 'qwe')))
+        for calc in [calculadora, calculadora_v2, calculadora_v3, calculadora_v4]
+            self.assertTrue(math.isnan(calculadora(2, 3, '$')))
+            self.assertTrue(math.isnan(calculadora(2, 5, '#')))
+            self.assertTrue(math.isnan(calculadora(0, 2, 'qwe')))
 
         # Teste números de virgula flutuante - fazer três testes para todas as versões
         self.assertAlmostEqual(calculadora(2.5, 1.5, '+'), 4.0)
